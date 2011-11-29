@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3E13B5D1484A0A6006BB90E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E13B5C1484A0A6006BB90E /* Cocoa.framework */; };
+		C3E13B671484A0A6006BB90E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3E13B651484A0A6006BB90E /* InfoPlist.strings */; };
+		C3E13B691484A0A6006BB90E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E13B681484A0A6006BB90E /* main.m */; };
+		C3E13B6D1484A0A6006BB90E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C3E13B6B1484A0A6006BB90E /* Credits.rtf */; };
+		C3E13B701484A0A6006BB90E /* WTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E13B6F1484A0A6006BB90E /* WTAppDelegate.m */; };
+		C3E13B731484A0A6006BB90E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E13B711484A0A6006BB90E /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C3E13B581484A0A6006BB90E /* Wiitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wiitar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E13B5C1484A0A6006BB90E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C3E13B5F1484A0A6006BB90E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C3E13B601484A0A6006BB90E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3E13B611484A0A6006BB90E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3E13B641484A0A6006BB90E /* Wiitar-Info.plist */ = {isa = PBXFileReference; path = "Wiitar-Info.plist"; sourceTree = "<group>"; };
+		C3E13B661484A0A6006BB90E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3E13B681484A0A6006BB90E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3E13B6A1484A0A6006BB90E /* Wiitar-Prefix.pch */ = {isa = PBXFileReference; path = "Wiitar-Prefix.pch"; sourceTree = "<group>"; };
+		C3E13B6C1484A0A6006BB90E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C3E13B6E1484A0A6006BB90E /* WTAppDelegate.h */ = {isa = PBXFileReference; path = WTAppDelegate.h; sourceTree = "<group>"; };
+		C3E13B6F1484A0A6006BB90E /* WTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAppDelegate.m; sourceTree = "<group>"; };
+		C3E13B721484A0A6006BB90E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3E13B551484A0A6006BB90E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E13B5D1484A0A6006BB90E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3E13B4D1484A0A6006BB90E = {
+			isa = PBXGroup;
+			children = (
+				C3E13B621484A0A6006BB90E /* Wiitar */,
+				C3E13B5B1484A0A6006BB90E /* Frameworks */,
+				C3E13B591484A0A6006BB90E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3E13B591484A0A6006BB90E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3E13B581484A0A6006BB90E /* Wiitar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3E13B5B1484A0A6006BB90E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3E13B5C1484A0A6006BB90E /* Cocoa.framework */,
+				C3E13B5E1484A0A6006BB90E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3E13B5E1484A0A6006BB90E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3E13B5F1484A0A6006BB90E /* AppKit.framework */,
+				C3E13B601484A0A6006BB90E /* CoreData.framework */,
+				C3E13B611484A0A6006BB90E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C3E13B621484A0A6006BB90E /* Wiitar */ = {
+			isa = PBXGroup;
+			children = (
+				C3E13B6E1484A0A6006BB90E /* WTAppDelegate.h */,
+				C3E13B6F1484A0A6006BB90E /* WTAppDelegate.m */,
+				C3E13B711484A0A6006BB90E /* MainMenu.xib */,
+				C3E13B631484A0A6006BB90E /* Supporting Files */,
+			);
+			path = Wiitar;
+			sourceTree = "<group>";
+		};
+		C3E13B631484A0A6006BB90E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3E13B641484A0A6006BB90E /* Wiitar-Info.plist */,
+				C3E13B651484A0A6006BB90E /* InfoPlist.strings */,
+				C3E13B681484A0A6006BB90E /* main.m */,
+				C3E13B6A1484A0A6006BB90E /* Wiitar-Prefix.pch */,
+				C3E13B6B1484A0A6006BB90E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3E13B571484A0A6006BB90E /* Wiitar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3E13B761484A0A6006BB90E /* Build configuration list for PBXNativeTarget "Wiitar" */;
+			buildPhases = (
+				C3E13B541484A0A6006BB90E /* Sources */,
+				C3E13B551484A0A6006BB90E /* Frameworks */,
+				C3E13B561484A0A6006BB90E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wiitar;
+			productName = Wiitar;
+			productReference = C3E13B581484A0A6006BB90E /* Wiitar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3E13B4F1484A0A6006BB90E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "iSpeech, Inc.";
+			};
+			buildConfigurationList = C3E13B521484A0A6006BB90E /* Build configuration list for PBXProject "Wiitar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3E13B4D1484A0A6006BB90E;
+			productRefGroup = C3E13B591484A0A6006BB90E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3E13B571484A0A6006BB90E /* Wiitar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3E13B561484A0A6006BB90E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E13B671484A0A6006BB90E /* InfoPlist.strings in Resources */,
+				C3E13B6D1484A0A6006BB90E /* Credits.rtf in Resources */,
+				C3E13B731484A0A6006BB90E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3E13B541484A0A6006BB90E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E13B691484A0A6006BB90E /* main.m in Sources */,
+				C3E13B701484A0A6006BB90E /* WTAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C3E13B651484A0A6006BB90E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3E13B661484A0A6006BB90E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3E13B6B1484A0A6006BB90E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3E13B6C1484A0A6006BB90E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C3E13B711484A0A6006BB90E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3E13B721484A0A6006BB90E /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3E13B741484A0A6006BB90E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C3E13B751484A0A6006BB90E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C3E13B771484A0A6006BB90E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Wiitar/Wiitar-Prefix.pch";
+				INFOPLIST_FILE = "Wiitar/Wiitar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3E13B781484A0A6006BB90E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Wiitar/Wiitar-Prefix.pch";
+				INFOPLIST_FILE = "Wiitar/Wiitar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3E13B521484A0A6006BB90E /* Build configuration list for PBXProject "Wiitar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3E13B741484A0A6006BB90E /* Debug */,
+				C3E13B751484A0A6006BB90E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3E13B761484A0A6006BB90E /* Build configuration list for PBXNativeTarget "Wiitar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3E13B771484A0A6006BB90E /* Debug */,
+				C3E13B781484A0A6006BB90E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3E13B4F1484A0A6006BB90E /* Project object */;
+}
