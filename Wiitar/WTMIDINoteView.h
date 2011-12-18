@@ -10,4 +10,10 @@
 
 @interface WTMIDINoteView : NSView
 
+@property (nonatomic, assign) NSInteger note;
+@property (nonatomic, assign, getter = isEnabled) BOOL enabled;
+
+@property (nonatomic, assign) id target;
+@property (nonatomic, assign) SEL action;
+
 @end

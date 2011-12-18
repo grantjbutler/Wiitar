@@ -8,6 +8,20 @@
 
 #import <Cocoa/Cocoa.h>
 
+enum _WTFretButton {
+	WTGreenFretButton  = 1 << 1,
+	WTRedFretButton    = 1 << 2,
+	WTYellowFretButton = 1 << 3,
+	WTBlueFretButton   = 1 << 4,
+	WTOrangeFretButton = 1 << 5
+};
+
+typedef NSUInteger WTFretButton;
+
 @interface WTFretboardView : NSView
+
+@property (nonatomic, assign, getter = isEditable) BOOL editable;
+
+@property (nonatomic, assign) WTFretButton buttons;
 
 @end

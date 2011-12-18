@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WTWindowController : NSObject
+@class WiiRemote;
+@class WiiRemoteDiscovery;
+
+@interface WTWindowController : NSObject <NSTableViewDelegate, NSTableViewDataSource>
+
+- (IBAction)connect:(id)sender;
 
 @end

@@ -76,7 +76,21 @@ typedef enum {
 	WiiClassicControllerRightButton,
 	WiiClassicControllerMinusButton,
 	WiiClassicControllerHomeButton,
-	WiiClassicControllerPlusButton
+	WiiClassicControllerPlusButton,
+    
+    WiiGuitarHeroWorldTourGreenButton,
+    WiiGuitarHeroWorldTourRedButton,
+    WiiGuitarHeroWorldTourYellowButton,
+    WiiGuitarHeroWorldTourBlueButton,
+    WiiGuitarHeroWorldTourOrangeButton,
+    
+    WiiGuitarHeroWorldTourStrumDownButton,
+    WiiGuitarHeroWorldTourStrumUpButton,
+    
+    WiiGuitarHeroWorldTourPlusButton,
+    WiiGuitarHeroWorldTourMinusButton,
+    
+    WiiButtonCount
 } WiiButtonType;
 
 unsigned char mii_data_buf[WIIMOTE_MII_DATA_BYTES_PER_SLOT + 16];
@@ -85,7 +99,9 @@ unsigned short mii_data_offset;
 typedef enum {
 	WiiExpNotAttached,
 	WiiNunchuk,
-	WiiClassicController
+	WiiClassicController,
+    WiiGuitar,
+    WiiGuitarWorldTour
 }  WiiExpansionPortType;
 
 typedef enum {
@@ -139,7 +155,7 @@ typedef enum {
 	
 	NSTimer * statusTimer;
 	IOBluetoothUserNotification * disconnectNotification;
-	BOOL buttonState[28];
+	BOOL buttonState[WiiButtonCount];
 	
 	//wiimote
 	unsigned short accX;
@@ -163,6 +179,12 @@ typedef enum {
 	unsigned short cStickY2;
 	unsigned short cAnalogL;
 	unsigned short cAnalogR;
+    
+    // guitar hero world tour guitar
+    unsigned short wtTouchBar;
+    unsigned short wtWhammyBar;
+    unsigned short wtButtonDataPlusMinus;
+    unsigned short wtButtonDataOther;
 } 
 
 - (NSString*) address;
@@ -196,6 +218,8 @@ typedef enum {
 - (void) sendWiiRemoteButtonEvent:(UInt16) data;
 - (void) sendWiiNunchukButtonEvent:(UInt16) data;
 - (void) sendWiiClassicControllerButtonEvent:(UInt16) data;
+- (void)sendGuitarHeroWorldTourEvent:(UInt16)data;
+- (void)sendGuitarHeroWorldTourFretEvent:(UInt16)data;
 
 @end
 

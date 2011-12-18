@@ -7,19 +7,19 @@
 //
 
 #import "WTAppDelegate.h"
+#import "WTMIDIController.h"
 
 @implementation WTAppDelegate
 
 @synthesize window = _window;
 
-- (void)dealloc
-{
+- (void)dealloc {
     [super dealloc];
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    [WTMIDIController sharedController];
 }
 
 @end

@@ -59,8 +59,19 @@ typedef enum {
 	kWiiClassicControllerMinusButton	= 0x1000,
 	kWiiClassicControllerLButton		= 0x2000,
 	kWiiClassicControllerDownButton		= 0x4000,
-	kWiiClassicControllerRightButton	= 0x8000
+	kWiiClassicControllerRightButton	= 0x8000,
 	
+    kWiiGuitarHeroWorldTourYellowButton = 0x0008,
+    kWiiGuitarHeroWorldTourGreenButton  = 0x0010,
+    kWiiGuitarHeroWorldTourBlueButton   = 0x0020,
+    kWiiGuitarHeroWorldTourRedButton    = 0x0040,
+    kWiiGuitarHeroWorldTourOrangeButton = 0x0080,
+    
+    kWiiGuitarHeroWorldTourStrumUpButton = 0x0001,
+    kWiiGuitarHeroWorldTourStrumDownButton = 0x0040,
+    
+    kWiiGuitarHeroWorldTourPlusButton = 0x0004,
+    kWiiGuitarHeroWorldTourMinusButton = 0x0010
 } WiiButtonBitMask;
 
 @interface WiiRemote (Private)
@@ -205,7 +216,7 @@ typedef enum {
 	for (i=0; i<10 ; i++) {
 		ret = [_cchan writeSync:buf length:length];		
 		if (ret != kIOReturnSuccess) {
-			NSLogDebug(@"Write Error for command 0x%x:", buf[1], ret);		
+//			NSLogDebug(@"Write Error for command 0x%x:", buf[1], ret);		
 			LogIOReturn (ret);
 //			[self closeConnection];
 			usleep (10000);
@@ -423,7 +434,7 @@ typedef enum {
 	unsigned char cmd [22];
 
 	if (length > 16)
-		NSLog (@"Error! Trying to write more than 16 bytes of data (length=%i)", length);
+		NSLog (@"Error! Trying to write more than 16 bytes of data (length=%lu)", length);
 
 	memset (cmd, 0, 22);
 	memcpy (cmd + 6, data, length);
@@ -569,6 +580,18 @@ typedef enum {
 					[[NSNotificationCenter defaultCenter] postNotificationName:WiiRemoteExpansionPortChangedNotification object:self];					
 				}
 				break;
+            case 0xff:
+                NSLogDebug (@"Wii Guitar Hero World Tour guitar connected.");
+                if(expType != WiiGuitarWorldTour) {
+                    expType = WiiGuitarWorldTour;
+                    
+                    // We need to write all this extra data to get the guitar to send us data.
+                    [self writeData:(darr){0x55} at:0x04a400f0 length:1];
+                    [self writeData:(darr){0} at:0x04a400fb length:1];
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:WiiRemoteExpansionPortChangedNotification object:self];	
+                }
+                break;
 			default:
 				NSLogDebug (@"Unknown device connected (0x%x). ", WII_DECRYPT(dp[21]));
 				expType = WiiExpNotAttached;
@@ -751,6 +774,17 @@ typedef enum {
 			}			
 
 			break;
+        
+        case WiiGuitarWorldTour:
+            wtTouchBar = dp[startByte + 2];
+            wtWhammyBar = dp[startByte + 3];
+            wtButtonDataPlusMinus = dp[startByte + 4];
+            wtButtonDataOther = dp[startByte + 5];
+            
+            [self sendGuitarHeroWorldTourEvent:wtButtonDataPlusMinus];
+            [self sendGuitarHeroWorldTourFretEvent:wtButtonDataOther];
+            
+            break;
 	}
 } // handleExtensionData
 
@@ -864,7 +898,7 @@ typedef enum {
 
 - (void) handleButtonReport:(unsigned char *) dp length:(size_t) dataLength
 {
-	// wiimote buttons
+    // wiimote buttons
 	buttonData = ((short)dp[2] << 8) + dp[3];
 	[self sendWiiRemoteButtonEvent:buttonData];
 				
@@ -877,7 +911,7 @@ typedef enum {
 			[self handleExtensionData:dp length:dataLength];
 			break;
 	}
-	
+    
 	// report contains IR data
 	if (dp[1] & 0x02) {
 		[self handleIRData: dp length: dataLength];
@@ -1289,6 +1323,151 @@ typedef enum {
 	}
 }
 
+- (void)sendGuitarHeroWorldTourEvent:(UInt16)data {
+    if (!(data & kWiiGuitarHeroWorldTourStrumDownButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourStrumDownButton]){
+			buttonState[WiiGuitarHeroWorldTourStrumDownButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourStrumDownButton isPressed:buttonState[WiiGuitarHeroWorldTourStrumDownButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourStrumDownButton]){
+			buttonState[WiiGuitarHeroWorldTourStrumDownButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourStrumDownButton isPressed:buttonState[WiiGuitarHeroWorldTourStrumDownButton]];
+			
+		}
+	}
+    
+    if (!(data & kWiiGuitarHeroWorldTourPlusButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourPlusButton]){
+			buttonState[WiiGuitarHeroWorldTourPlusButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourPlusButton isPressed:buttonState[WiiGuitarHeroWorldTourPlusButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourPlusButton]){
+			buttonState[WiiGuitarHeroWorldTourPlusButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourPlusButton isPressed:buttonState[WiiGuitarHeroWorldTourPlusButton]];
+			
+		}
+	}
+    
+    if (!(data & kWiiGuitarHeroWorldTourMinusButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourMinusButton]){
+			buttonState[WiiGuitarHeroWorldTourMinusButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourMinusButton isPressed:buttonState[WiiGuitarHeroWorldTourMinusButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourMinusButton]){
+			buttonState[WiiGuitarHeroWorldTourMinusButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourMinusButton isPressed:buttonState[WiiGuitarHeroWorldTourMinusButton]];
+			
+		}
+	}
+}
+
+- (void)sendGuitarHeroWorldTourFretEvent:(UInt16)data {
+    if (!(data & kWiiGuitarHeroWorldTourGreenButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourGreenButton]){
+			buttonState[WiiGuitarHeroWorldTourGreenButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourGreenButton isPressed:buttonState[WiiGuitarHeroWorldTourGreenButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourGreenButton]){
+			buttonState[WiiGuitarHeroWorldTourGreenButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourGreenButton isPressed:buttonState[WiiGuitarHeroWorldTourGreenButton]];
+			
+		}
+	}
+    
+    if (!(data & kWiiGuitarHeroWorldTourRedButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourRedButton]){
+			buttonState[WiiGuitarHeroWorldTourRedButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourRedButton isPressed:buttonState[WiiGuitarHeroWorldTourRedButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourRedButton]){
+			buttonState[WiiGuitarHeroWorldTourRedButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourRedButton isPressed:buttonState[WiiGuitarHeroWorldTourRedButton]];
+			
+		}
+	}
+    
+    if (!(data & kWiiGuitarHeroWorldTourYellowButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourYellowButton]){
+			buttonState[WiiGuitarHeroWorldTourYellowButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourYellowButton isPressed:buttonState[WiiGuitarHeroWorldTourYellowButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourYellowButton]){
+			buttonState[WiiGuitarHeroWorldTourYellowButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourYellowButton isPressed:buttonState[WiiGuitarHeroWorldTourYellowButton]];
+			
+		}
+	}
+    
+    if (!(data & kWiiGuitarHeroWorldTourBlueButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourBlueButton]){
+			buttonState[WiiGuitarHeroWorldTourBlueButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourBlueButton isPressed:buttonState[WiiGuitarHeroWorldTourBlueButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourBlueButton]){
+			buttonState[WiiGuitarHeroWorldTourBlueButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourBlueButton isPressed:buttonState[WiiGuitarHeroWorldTourBlueButton]];
+			
+		}
+	}
+    
+    if (!(data & kWiiGuitarHeroWorldTourOrangeButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourOrangeButton]){
+			buttonState[WiiGuitarHeroWorldTourOrangeButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourOrangeButton isPressed:buttonState[WiiGuitarHeroWorldTourOrangeButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourOrangeButton]){
+			buttonState[WiiGuitarHeroWorldTourOrangeButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourOrangeButton isPressed:buttonState[WiiGuitarHeroWorldTourOrangeButton]];
+			
+		}
+	}
+    
+    if (!(data & kWiiGuitarHeroWorldTourOrangeButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourOrangeButton]){
+			buttonState[WiiGuitarHeroWorldTourOrangeButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourOrangeButton isPressed:buttonState[WiiGuitarHeroWorldTourOrangeButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourOrangeButton]){
+			buttonState[WiiGuitarHeroWorldTourOrangeButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourOrangeButton isPressed:buttonState[WiiGuitarHeroWorldTourOrangeButton]];
+			
+		}
+	}
+    
+    // Strum Up is also part of this data set, so we need to check that, too.
+    if (!(data & kWiiGuitarHeroWorldTourStrumUpButton)){
+		
+		if (!buttonState[WiiGuitarHeroWorldTourStrumUpButton]){
+			buttonState[WiiGuitarHeroWorldTourStrumUpButton] = YES;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourStrumUpButton isPressed:buttonState[WiiGuitarHeroWorldTourStrumUpButton]];
+		}
+	}else{
+		if (buttonState[WiiGuitarHeroWorldTourStrumUpButton]){
+			buttonState[WiiGuitarHeroWorldTourStrumUpButton] = NO;
+			[_delegate buttonChanged:WiiGuitarHeroWorldTourStrumUpButton isPressed:buttonState[WiiGuitarHeroWorldTourStrumUpButton]];
+			
+		}
+	}
+}
+
 - (IOReturn) getMii:(unsigned int) slot
 {
 	mii_data_offset = 0;
@@ -1361,12 +1540,12 @@ typedef enum {
 
 - (void) l2capChannelOpenComplete:(IOBluetoothL2CAPChannel*) l2capChannel status:(IOReturn) error
 {
-	NSLogDebug (@"l2capChannelOpenComplete (PSM:0x%x)", [l2capChannel getPSM]);
+//	NSLogDebug (@"l2capChannelOpenComplete (PSM:0x%x)", [l2capChannel getPSM]);
 }
 
 - (void) l2capChannelClosed:(IOBluetoothL2CAPChannel*) l2capChannel
 {
-	NSLogDebug (@"l2capChannelClosed (PSM:0x%x)", [l2capChannel getPSM]);
+//	NSLogDebug (@"l2capChannelClosed (PSM:0x%x)", [l2capChannel getPSM]);
 
 	if (l2capChannel == _cchan)
 		_cchan = nil;

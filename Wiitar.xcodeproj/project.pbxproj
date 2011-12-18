@@ -7,28 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3368EB71495702800CFDDD8 /* WTMIDINoteFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3368EB61495702800CFDDD8 /* WTMIDINoteFormatter.m */; };
+		C3368EBB14957B8400CFDDD8 /* WTMIDINoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3368EBA14957B8400CFDDD8 /* WTMIDINoteView.m */; };
+		C34F20DE148FECC30069059A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C34F20DD148FECC30069059A /* background.png */; };
+		C34F20E1148FF0170069059A /* WTButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C34F20E0148FF0170069059A /* WTButtonManager.m */; };
+		C34F20E4148FF1000069059A /* WTFretboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C34F20E3148FF1000069059A /* WTFretboardView.m */; };
+		C36BD89C148A9C2100D0042C /* WTMIDIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36BD89B148A9C2100D0042C /* WTMIDIController.m */; };
+		C3BBF72A1484ABCA0076D047 /* WTWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BBF7291484ABCA0076D047 /* WTWindowController.m */; };
 		C3E13B5D1484A0A6006BB90E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E13B5C1484A0A6006BB90E /* Cocoa.framework */; };
 		C3E13B671484A0A6006BB90E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3E13B651484A0A6006BB90E /* InfoPlist.strings */; };
 		C3E13B691484A0A6006BB90E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E13B681484A0A6006BB90E /* main.m */; };
 		C3E13B6D1484A0A6006BB90E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C3E13B6B1484A0A6006BB90E /* Credits.rtf */; };
 		C3E13B701484A0A6006BB90E /* WTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E13B6F1484A0A6006BB90E /* WTAppDelegate.m */; };
 		C3E13B731484A0A6006BB90E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E13B711484A0A6006BB90E /* MainMenu.xib */; };
+		C3E13B7B1484A0F5006BB90E /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E13B791484A0F5006BB90E /* CoreMIDI.framework */; };
+		C3E13B7C1484A0F5006BB90E /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E13B7A1484A0F5006BB90E /* IOBluetooth.framework */; };
+		C3E13B831484A119006BB90E /* WiiRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E13B7F1484A119006BB90E /* WiiRemote.m */; };
+		C3E13B841484A119006BB90E /* WiiRemoteDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E13B811484A119006BB90E /* WiiRemoteDiscovery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C3368EB51495702800CFDDD8 /* WTMIDINoteFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMIDINoteFormatter.h; sourceTree = "<group>"; };
+		C3368EB61495702800CFDDD8 /* WTMIDINoteFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMIDINoteFormatter.m; sourceTree = "<group>"; };
+		C3368EB914957B8400CFDDD8 /* WTMIDINoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMIDINoteView.h; sourceTree = "<group>"; };
+		C3368EBA14957B8400CFDDD8 /* WTMIDINoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMIDINoteView.m; sourceTree = "<group>"; };
+		C34F20DD148FECC30069059A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		C34F20DF148FF0170069059A /* WTButtonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTButtonManager.h; sourceTree = "<group>"; };
+		C34F20E0148FF0170069059A /* WTButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTButtonManager.m; sourceTree = "<group>"; };
+		C34F20E2148FF1000069059A /* WTFretboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFretboardView.h; sourceTree = "<group>"; };
+		C34F20E3148FF1000069059A /* WTFretboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTFretboardView.m; sourceTree = "<group>"; };
+		C36BD89A148A9C2100D0042C /* WTMIDIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMIDIController.h; sourceTree = "<group>"; };
+		C36BD89B148A9C2100D0042C /* WTMIDIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMIDIController.m; sourceTree = "<group>"; };
+		C3BBF7281484ABCA0076D047 /* WTWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTWindowController.h; sourceTree = "<group>"; };
+		C3BBF7291484ABCA0076D047 /* WTWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTWindowController.m; sourceTree = "<group>"; };
 		C3E13B581484A0A6006BB90E /* Wiitar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wiitar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E13B5C1484A0A6006BB90E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3E13B5F1484A0A6006BB90E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C3E13B601484A0A6006BB90E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C3E13B611484A0A6006BB90E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C3E13B641484A0A6006BB90E /* Wiitar-Info.plist */ = {isa = PBXFileReference; path = "Wiitar-Info.plist"; sourceTree = "<group>"; };
+		C3E13B641484A0A6006BB90E /* Wiitar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wiitar-Info.plist"; sourceTree = "<group>"; };
 		C3E13B661484A0A6006BB90E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3E13B681484A0A6006BB90E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C3E13B6A1484A0A6006BB90E /* Wiitar-Prefix.pch */ = {isa = PBXFileReference; path = "Wiitar-Prefix.pch"; sourceTree = "<group>"; };
+		C3E13B6A1484A0A6006BB90E /* Wiitar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wiitar-Prefix.pch"; sourceTree = "<group>"; };
 		C3E13B6C1484A0A6006BB90E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		C3E13B6E1484A0A6006BB90E /* WTAppDelegate.h */ = {isa = PBXFileReference; path = WTAppDelegate.h; sourceTree = "<group>"; };
+		C3E13B6E1484A0A6006BB90E /* WTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAppDelegate.h; sourceTree = "<group>"; };
 		C3E13B6F1484A0A6006BB90E /* WTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAppDelegate.m; sourceTree = "<group>"; };
 		C3E13B721484A0A6006BB90E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C3E13B791484A0F5006BB90E /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		C3E13B7A1484A0F5006BB90E /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		C3E13B7D1484A119006BB90E /* Mii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mii.h; sourceTree = "<group>"; };
+		C3E13B7E1484A119006BB90E /* WiiRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiRemote.h; sourceTree = "<group>"; };
+		C3E13B7F1484A119006BB90E /* WiiRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiRemote.m; sourceTree = "<group>"; };
+		C3E13B801484A119006BB90E /* WiiRemoteDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiRemoteDiscovery.h; sourceTree = "<group>"; };
+		C3E13B811484A119006BB90E /* WiiRemoteDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WiiRemoteDiscovery.m; sourceTree = "<group>"; };
+		C3E13B821484A119006BB90E /* WiiRemotePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WiiRemotePrivate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E13B7B1484A0F5006BB90E /* CoreMIDI.framework in Frameworks */,
+				C3E13B7C1484A0F5006BB90E /* IOBluetooth.framework in Frameworks */,
 				C3E13B5D1484A0A6006BB90E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +97,8 @@
 		C3E13B5B1484A0A6006BB90E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3E13B791484A0F5006BB90E /* CoreMIDI.framework */,
+				C3E13B7A1484A0F5006BB90E /* IOBluetooth.framework */,
 				C3E13B5C1484A0A6006BB90E /* Cocoa.framework */,
 				C3E13B5E1484A0A6006BB90E /* Other Frameworks */,
 			);
@@ -82,8 +118,26 @@
 		C3E13B621484A0A6006BB90E /* Wiitar */ = {
 			isa = PBXGroup;
 			children = (
+				C3E13B7D1484A119006BB90E /* Mii.h */,
+				C3E13B7E1484A119006BB90E /* WiiRemote.h */,
+				C3E13B7F1484A119006BB90E /* WiiRemote.m */,
+				C3E13B801484A119006BB90E /* WiiRemoteDiscovery.h */,
+				C3E13B811484A119006BB90E /* WiiRemoteDiscovery.m */,
+				C3E13B821484A119006BB90E /* WiiRemotePrivate.h */,
 				C3E13B6E1484A0A6006BB90E /* WTAppDelegate.h */,
 				C3E13B6F1484A0A6006BB90E /* WTAppDelegate.m */,
+				C36BD89A148A9C2100D0042C /* WTMIDIController.h */,
+				C36BD89B148A9C2100D0042C /* WTMIDIController.m */,
+				C3BBF7281484ABCA0076D047 /* WTWindowController.h */,
+				C3BBF7291484ABCA0076D047 /* WTWindowController.m */,
+				C34F20DF148FF0170069059A /* WTButtonManager.h */,
+				C34F20E0148FF0170069059A /* WTButtonManager.m */,
+				C34F20E2148FF1000069059A /* WTFretboardView.h */,
+				C34F20E3148FF1000069059A /* WTFretboardView.m */,
+				C3368EB51495702800CFDDD8 /* WTMIDINoteFormatter.h */,
+				C3368EB61495702800CFDDD8 /* WTMIDINoteFormatter.m */,
+				C3368EB914957B8400CFDDD8 /* WTMIDINoteView.h */,
+				C3368EBA14957B8400CFDDD8 /* WTMIDINoteView.m */,
 				C3E13B711484A0A6006BB90E /* MainMenu.xib */,
 				C3E13B631484A0A6006BB90E /* Supporting Files */,
 			);
@@ -93,6 +147,7 @@
 		C3E13B631484A0A6006BB90E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C34F20DD148FECC30069059A /* background.png */,
 				C3E13B641484A0A6006BB90E /* Wiitar-Info.plist */,
 				C3E13B651484A0A6006BB90E /* InfoPlist.strings */,
 				C3E13B681484A0A6006BB90E /* main.m */,
@@ -156,6 +211,7 @@
 				C3E13B671484A0A6006BB90E /* InfoPlist.strings in Resources */,
 				C3E13B6D1484A0A6006BB90E /* Credits.rtf in Resources */,
 				C3E13B731484A0A6006BB90E /* MainMenu.xib in Resources */,
+				C34F20DE148FECC30069059A /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +224,14 @@
 			files = (
 				C3E13B691484A0A6006BB90E /* main.m in Sources */,
 				C3E13B701484A0A6006BB90E /* WTAppDelegate.m in Sources */,
+				C3E13B831484A119006BB90E /* WiiRemote.m in Sources */,
+				C3E13B841484A119006BB90E /* WiiRemoteDiscovery.m in Sources */,
+				C3BBF72A1484ABCA0076D047 /* WTWindowController.m in Sources */,
+				C36BD89C148A9C2100D0042C /* WTMIDIController.m in Sources */,
+				C34F20E1148FF0170069059A /* WTButtonManager.m in Sources */,
+				C34F20E4148FF1000069059A /* WTFretboardView.m in Sources */,
+				C3368EB71495702800CFDDD8 /* WTMIDINoteFormatter.m in Sources */,
+				C3368EBB14957B8400CFDDD8 /* WTMIDINoteView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +351,7 @@
 				C3E13B781484A0A6006BB90E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
