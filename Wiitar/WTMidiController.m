@@ -148,6 +148,7 @@
 
 - (void)sendPacketList:(WTMIDIPacketList *)packetList {
     OSStatus result = MIDIReceived(outputSource, [packetList packetList]);
+    
     if(result != noErr) {
         NSLog(@"DIDN'T SEND");
     }
